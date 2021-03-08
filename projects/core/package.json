@@ -1,0 +1,28 @@
+{
+  "name": "@cellows/frontend-core",
+  "version": "0.0.1",
+  "description": "An Angular core library for the Cellows platform",
+  "author": {
+    "name": "Jef Wachters"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cellows/cellows-frontend-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cellows/cellows-frontend-core/issues"
+  },
+  "homepage": "https://github.com/Cellows/cellows-frontend-core",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^11.2.4",
+    "@angular/core": "^11.2.4"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
