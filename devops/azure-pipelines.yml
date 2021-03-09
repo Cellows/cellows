@@ -50,4 +50,12 @@ stages:
               - bash: |
                   cd $(Pipeline.Workspace)
                   ls
+                  cd $(Pipeline.Workspace)/drop
+                  ls
                 displayName: 'debug: Display contents of workspace'
+              # - script: |
+              #     cd drop
+              #     npm install -g @angular/cli
+              #     npm install
+              #     ng build --prod
+              #   displayName: 'npm publish'
