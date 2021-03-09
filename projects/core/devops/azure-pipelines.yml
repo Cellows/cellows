@@ -1,0 +1,37 @@
+trigger:
+- master
+- develop
+
+pool:
+  vmImage: ubuntu-20.04
+
+variables:
+  location: "West Europe"
+  isDev: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')]
+
+  isMaster: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+  isPullRequest: $[eq(variables['Build.Reason'], 'PullRequest')]
+  isPullRequestToDev: $[and(eq(variables['Build.Reason'], 'PullRequest'), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/develop'))]
+  isPullRequestToMaster: $[and(eq(variables['Build.Reason'], 'PullRequest'), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/master'))]
+  isManual: $[eq(variables['Build.Reason'], 'Manual')]
+
+  ci_dev_condition: $[or(eq(variables.isPullRequestToDev, true), eq(variables.isDev, true), eq(variables.isManual, true))]
+  cd_dev_condition: $[and(eq(variables.isPullRequest, false), eq(variables.isDev, true))]
+
+  ci_test_condition: $[or(eq(variables.isMaster, true), eq(variables.isPullRequestToMaster, true))]
+  cd_test_condition: $[and(eq(variables.isMaster, true), eq(variables.isPullRequest, false))]
+
+  cd_prod_condition: $[and(eq(variables.isMaster, true), eq(variables.isPullRequest, false))]
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Cellows/cellows-pipeline-templates
+
+stages:
+# ENVIRONMENT : DEVELOPMENT
+  - template: stage-ci-angular.yml@templates
+    parameters:
+      stageName: CI_Angular_DEV
+      condition: and(succeeded(), eq(variables.ci_dev_condition, true))
