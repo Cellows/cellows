@@ -1,5 +1,5 @@
 {
-  "name": "cellows-frontend-core",
+  "name": "cellows-core",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

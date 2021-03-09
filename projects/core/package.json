@@ -1,5 +1,5 @@
 {
-  "name": "@cellows/frontend-core",
+  "name": "@cellows/core",
   "version": "0.0.1",
   "description": "An Angular core library for the Cellows platform",
   "author": {
@@ -7,17 +7,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Cellows/cellows-frontend-core.git"
+    "url": "https://github.com/Cellows/cellows-core.git"
   },
   "bugs": {
-    "url": "https://github.com/Cellows/cellows-frontend-core/issues"
+    "url": "https://github.com/Cellows/cellows-core/issues"
   },
-  "homepage": "https://github.com/Cellows/cellows-frontend-core",
+  "homepage": "https://github.com/Cellows/cellows-core",
   "keywords": [
     "angular",
     "javascript",
     "typescript"
   ],
+  "schematics": "./schematics/collection.json",
+  "ng-add": {
+    "save": "dependencies"
+  },
   "peerDependencies": {
     "@angular/common": "^11.2.4",
     "@angular/core": "^11.2.4"
