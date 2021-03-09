@@ -35,3 +35,19 @@ stages:
     parameters:
       stageName: CI_Angular_DEV
       condition: and(succeeded(), eq(variables.ci_dev_condition, true))
+
+  - stage: ${{ parameters.stageName }}
+    dependsOn: ${{ parameters.dependsOn }}
+    condition: ${{ parameters.condition }}
+    displayName: ${{ parameters.stageName }}
+    jobs:
+      - deployment: Deploy
+        environment: ${{ parameters.environment }}
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - bash: |
+                  cd $(Pipeline.Workspace)
+                  ls
+                displayName: 'debug: Display contents of workspace'
