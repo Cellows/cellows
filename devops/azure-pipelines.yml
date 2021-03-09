@@ -36,10 +36,10 @@ stages:
       stageName: CI_Angular_DEV
       condition: and(succeeded(), eq(variables.ci_dev_condition, true))
 
-  - stage: ${{ parameters.stageName }}
-    dependsOn: ${{ parameters.dependsOn }}
-    condition: ${{ parameters.condition }}
-    displayName: ${{ parameters.stageName }}
+  - stage: CD_Angular_DEV #${{ parameters.stageName }}
+    dependsOn:  CI_Angular_DEV #${{ parameters.dependsOn }}
+    condition: eq(variables.cd_dev_condition, true) #${{ parameters.condition }}
+    displayName: CD_Angular_DEV #${{ parameters.stageName }}
     jobs:
       - deployment: Deploy
         environment: ${{ parameters.environment }}
