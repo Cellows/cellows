@@ -38,7 +38,7 @@ stages:
 
   - stage: CD_Angular_DEV #${{ parameters.stageName }}
     dependsOn:  CI_Angular_DEV #${{ parameters.dependsOn }}
-    condition: eq(variables.cd_dev_condition, true) #${{ parameters.condition }}
+    #condition: eq(variables.cd_dev_condition, true) #${{ parameters.condition }}
     displayName: CD_Angular_DEV #${{ parameters.stageName }}
     jobs:
       - deployment: Deploy
