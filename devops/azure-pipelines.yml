@@ -42,7 +42,7 @@ stages:
     displayName: CD_Angular_DEV #${{ parameters.stageName }}
     jobs:
       - deployment: Deploy
-        environment: ${{ parameters.environment }}
+        environment: Dev #${{ parameters.environment }}
         strategy:
           runOnce:
             deploy:
