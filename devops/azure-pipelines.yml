@@ -44,3 +44,4 @@ stages:
       environment: Dev
       projectsToPublish:
         - name: core
+      npmServiceConnection: npmjs-registry
