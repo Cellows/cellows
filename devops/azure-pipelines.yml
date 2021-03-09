@@ -36,26 +36,11 @@ stages:
       stageName: CI_Angular_DEV
       condition: and(succeeded(), eq(variables.ci_dev_condition, true))
 
-  - stage: CD_Angular_DEV #${{ parameters.stageName }}
-    dependsOn:  CI_Angular_DEV #${{ parameters.dependsOn }}
-    #condition: eq(variables.cd_dev_condition, true) #${{ parameters.condition }}
-    displayName: CD_Angular_DEV #${{ parameters.stageName }}
-    jobs:
-      - deployment: Deploy
-        environment: Dev #${{ parameters.environment }}
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-              - bash: |
-                  cd $(Pipeline.Workspace)
-                  ls
-                  cd $(Pipeline.Workspace)/drop
-                  ls
-                displayName: 'debug: Display contents of workspace'
-              # - script: |
-              #     cd drop
-              #     npm install -g @angular/cli
-              #     npm install
-              #     ng build --prod
-              #   displayName: 'npm publish'
+  - template: stage-cd-npm-package.yml@templates
+    parameters:
+      stageName: CD_NPM_PACKAGE_DEV
+      condition: eq(variables.cd_dev_condition, true)
+      dependsOn:  CI_Angular_DEV
+      environment: Dev
+      projectsToPublish:
+        - name: core
