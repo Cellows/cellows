@@ -35,6 +35,8 @@ stages:
     parameters:
       stageName: CI_Angular_DEV
       condition: and(succeeded(), eq(variables.ci_dev_condition, true))
+      projectsToPublish:
+        - name: core
 
   - template: stage-cd-npm-package.yml@templates
     parameters:
