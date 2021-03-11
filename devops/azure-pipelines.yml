@@ -30,6 +30,7 @@ resources:
       name: Cellows/cellows-pipeline-templates
 
 stages:
+
 # ENVIRONMENT : DEVELOPMENT
   - template: stage-ci-angular.yml@templates
     parameters:
