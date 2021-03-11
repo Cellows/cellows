@@ -45,3 +45,4 @@ stages:
       projectsToPublish:
         - name: core
       npmServiceConnection: npmjs-registry
+      token: $(token)
