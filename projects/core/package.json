@@ -1,6 +1,6 @@
 {
   "name": "@cellows/core",
-  "version": "__GITVERSIONFULL__",
+  "version": "__BUILD_BUILDNUMBER__",
   "description": "An Angular core library for the Cellows platform",
   "author": {
     "name": "Jef Wachters"
