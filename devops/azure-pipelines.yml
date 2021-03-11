@@ -30,11 +30,14 @@ resources:
       name: Cellows/cellows-pipeline-templates
 
 stages:
+
 # ENVIRONMENT : DEVELOPMENT
   - template: stage-ci-angular.yml@templates
     parameters:
       stageName: CI_Angular_DEV
       condition: and(succeeded(), eq(variables.ci_dev_condition, true))
+      projectsToPublish:
+        - name: core
 
   - template: stage-cd-npm-package.yml@templates
     parameters:
@@ -45,3 +48,4 @@ stages:
       projectsToPublish:
         - name: core
       npmServiceConnection: npmjs-registry
+      token: $(TOKEN)
