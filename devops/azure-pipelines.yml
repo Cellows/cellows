@@ -32,7 +32,7 @@ resources:
 stages:
 
 # ENVIRONMENT : DEVELOPMENT
-  - template: stage-ci-angular.yml@templates
+  - template: stage-ci-angular-package.yml@templates
     parameters:
       stageName: CI_Angular_DEV
       condition: and(succeeded(), eq(variables.ci_dev_condition, true))
