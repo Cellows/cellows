@@ -7,6 +7,9 @@ export class LoggingService {
   appInsights!: ApplicationInsights;
 
   constructor(configService: ConfigService) {
+    if (!configService.appConfig) throw "LoggingService: the app config is not loaded";
+    if (!configService.appConfig.appInsights) throw "LoggingService: the key 'appInsights is not set in the app config"
+
     this.appInsights = new ApplicationInsights({
       config: {
         instrumentationKey: configService.appConfig.appInsights.instrumentationKey,
