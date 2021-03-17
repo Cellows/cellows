@@ -1,28 +1,34 @@
-import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
-import { CoreComponent } from './core.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
+import { ConfigService } from './services/config.service';
 import { ErrorHandlerService } from './services/error-handler.service';
 import { LoggingService } from './services/logging.service';
 
+export function configFactory(configService: ConfigService) {
+  const func = () => configService.loadConfig();
+  return func;
+}
+
 @NgModule({
-  declarations: [CoreComponent],
   imports: [
+    CommonModule,
+    HttpClientModule
   ],
-  exports: [CoreComponent],
   providers: [
-    { provide: ErrorHandler, useClass: ErrorHandlerService }
+    ConfigService,
+    LoggingService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: configFactory,
+      deps: [ConfigService],
+      multi: true
+    },
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService,
+      deps: [APP_INITIALIZER]
+    }
   ]
 })
-export class CoreModule {
-  public static forRoot(environment: any): ModuleWithProviders<CoreModule> {
-    return {
-        ngModule: CoreModule,
-        providers: [
-            LoggingService,
-            {
-                provide: 'env', // you can also use InjectionToken
-                useValue: environment
-            }
-        ]
-    };
-}
-}
+export class CoreModule { }

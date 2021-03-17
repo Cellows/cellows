@@ -1,14 +1,15 @@
-import { Inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
+import { ConfigService } from "./config.service";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class LoggingService {
-  appInsights: ApplicationInsights;
+  appInsights!: ApplicationInsights;
 
-  constructor(@Inject('env') private env: any) {
+  constructor(configService: ConfigService) {
     this.appInsights = new ApplicationInsights({
       config: {
-        instrumentationKey: this.env.appInsights.instrumentationKey,
+        instrumentationKey: configService.appConfig.appInsights.instrumentationKey,
         enableAutoRouteTracking: true // option to log all route changes
       }
     });
