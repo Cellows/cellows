@@ -1,24 +1,44 @@
-# Core
+# Cellows Core library
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+The Cellows Core library is an Angular library with general features which can be used to build apps for the Cellows platform.
 
-## Code scaffolding
+# Features
 
-Run `ng generate component component-name --project core` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project core`.
-> Note: Don't forget to add `--project core` or else it will be added to the default project in your `angular.json` file. 
+## Azure Application Insights logging
+
+The app-insights-logging module provides a logging service for Azure Application Insights and an error handler which logs all app exceptions in Application Insights.
+
+### Usage
+
+1. Import the module in the AppModule of the app:
+
+```
+imports: {
+  AppInsightsLoggingModule
+}
+```
+
+2. Add a provider in the AppModule of the app to set the Application Insights config:
+
+```
+const appInsightsConfig: AppInsightsConfig = { ... };
+
+providers: {
+  { provide: APP_INSIGHTS_CONFIG, useValue: appInsightsConfig }
+}
+```
+
+# Development
 
 ## Build
 
-Run `ng build core` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build core`, go to the dist folder `cd dist/core` and run `npm publish`.
+After building your library with `ng build --prod`, go to the dist folder `cd dist/core` and run `npm publish --access public`.
 
 ## Running unit tests
 
-Run `ng test core` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

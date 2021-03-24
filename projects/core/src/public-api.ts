@@ -2,7 +2,6 @@
  * Public API Surface of core
  */
 
-export * from './lib/models/app-config.model'
-export * from './lib/services/config.service'
-export * from './lib/services/logging.service'
-export * from './lib/core.module';
+export * from './lib/app-insights-logging/app-insights-config';
+export * from './lib/app-insights-logging/app-insights-logging.service';
+export * from './lib/app-insights-logging/app-insights-logging.module';
