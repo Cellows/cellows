@@ -1,27 +1,43 @@
 # Cellows Core library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+The Cellows Core library is an Angular library with general features which can be used to build apps for the Cellows platform.
 
-## Development server
+# Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Azure Application Insights logging
 
-## Code scaffolding
+The app-insights-logging module provides a logging service for Azure Application Insights and an error handler which logs all app exceptions in Application Insights.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Usage
+
+1. Import the module in the AppModule of the app:
+
+```
+imports: {
+  AppInsightsLoggingModule
+}
+```
+
+2. Add a provider in the AppModule of the app to set the Application Insights config:
+
+```
+const appInsightsConfig: AppInsightsConfig = { ... };
+
+providers: {
+  { provide: APP_INSIGHTS_CONFIG, useValue: appInsightsConfig }
+}
+```
+
+# Development
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Publishing
+
+After building your library with `ng build --prod`, go to the dist folder `cd dist/core` and run `npm publish --access public`.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

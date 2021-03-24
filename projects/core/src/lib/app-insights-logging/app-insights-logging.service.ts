@@ -1,19 +1,18 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
-import { ConfigService } from "./config.service";
+import { AppInsightsConfig, APP_INSIGHTS_CONFIG } from "./app-insights-config";
 
-@Injectable({ providedIn: 'root' })
-export class LoggingService {
+@Injectable()
+export class AppInsightsLoggingService {
   appInsights!: ApplicationInsights;
 
-  constructor(configService: ConfigService) {
-    if (!configService.appConfig) throw "LoggingService: the app config is not loaded";
-    if (!configService.appConfig.appInsights) throw "LoggingService: the key 'appInsights is not set in the app config"
+  constructor(@Inject(APP_INSIGHTS_CONFIG) appInsightsConfig: AppInsightsConfig) {
+    if (!appInsightsConfig.instrumentationKey) throw "LoggingService: the instrumentation key for app insights is not provided."
 
     this.appInsights = new ApplicationInsights({
       config: {
-        instrumentationKey: configService.appConfig.appInsights.instrumentationKey,
-        enableAutoRouteTracking: true // option to log all route changes
+        instrumentationKey: appInsightsConfig.instrumentationKey,
+        enableAutoRouteTracking: appInsightsConfig.enableAutoRouteTracking // option to log all route changes
       }
     });
     this.appInsights.loadAppInsights();
