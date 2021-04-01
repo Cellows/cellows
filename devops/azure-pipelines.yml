@@ -47,5 +47,22 @@ stages:
       environment: Dev
       projectsToPublish:
         - name: core
-      npmServiceConnection: npmjs-registry
+      token: $(TOKEN)
+
+# ENVIRONMENT : TEST
+  - template: stage-ci-angular-package.yml@templates
+    parameters:
+      stageName: CI_Angular_TEST
+      condition: and(succeeded(), eq(variables.ci_test_condition, true))
+      projectsToPublish:
+        - name: core
+
+  - template: stage-cd-npm-package.yml@templates
+    parameters:
+      stageName: CD_NPM_PACKAGE_TEST
+      condition: eq(variables.cd_test_condition, true)
+      dependsOn:  CI_Angular_TEST
+      environment: Test
+      projectsToPublish:
+        - name: core
       token: $(TOKEN)
