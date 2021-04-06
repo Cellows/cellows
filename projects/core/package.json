@@ -1,6 +1,6 @@
 {
   "name": "@cellows/core",
-  "version": "__BUILD_SEMVER__",
+  "version": "__BUILD_BUILDNUMBER__",
   "description": "An Angular library for the Cellows platform",
   "author": {
     "name": "Jef Wachters"
