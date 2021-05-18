@@ -32,11 +32,11 @@ providers: {
 
 ## Build
 
-Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build --prod`, go to the dist folder `cd dist/core` and run `npm publish --access public`.
+After building your library with `ng build`, go to the dist folder `cd dist/core` and run `npm publish --access public`.
 
 ## Running unit tests
 
