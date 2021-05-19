@@ -1,0 +1,59 @@
+/* font-family */
+
+
+
+/* font-size */
+
+
+
+
+
+/* font-weight */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+$noto-sans: "Noto Sans",sans-serif;
+$tahoma:    "Tahoma", sans-serif;
+$lato:      "Lato", sans-serif;
+
+$font-family--primary: $lato;
+$font-family--secondary: $noto-sans;
+
+/*  ==========================================================================
+    FONTSIZES 
+    ========================================================================== */
+$font-size--base--px: 13px;
+$font-size--base: 1.3rem;
+
+$font-size--xs: 1rem;
+$font-size--sm: 1.3rem;
+$font-size--md: 1.6rem;
+$font-size--lg: 1.8rem;
+$font-size--xl: 2rem;
+
+$f1: $font-size--xl;
+$f2: $font-size--lg;
+$f3: $font-size--md;
+$f4: $font-size--sm;
+$f5: $font-size--xs;
+
+$header-size--1: $font-size--xl;
+$header-size--2: $font-size--lg;
+$header-size--3: $font-size--lg;
+
+
+/*  ==========================================================================
+    FONTWEIGHTS 
+    ========================================================================== */
+
+$font-weight--light: 100;
+$font-weight--normal: 400;
+$font-weight--strong: 600;
+
+// $icon-size--small: 2.4rem;
+// $icon-size--medium: 4.8rem;
+// $icon-size--large: 150%;
+// $icon-size--extra-large: 7.2rem;

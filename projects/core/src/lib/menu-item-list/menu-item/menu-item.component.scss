@@ -1,0 +1,30 @@
+@import "abstracts/abstracts";
+
+$font-color-menuitem: $white;
+$font-size-icon: $font-size--lg;
+
+:host {
+  display: block;
+  white-space: nowrap;
+  margin: 0 2rem 0 0;
+}
+
+:host-context(.sidenav__container--collapsed) .menuitem__label {
+  opacity: 0;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  font-size: $font-size-icon;
+  padding: 2rem;
+
+  color: $font-color-menuitem;
+}
+
+.menuitem__label {
+  @include transition(opacity, .3s ease-in-out);
+  vertical-align: text-top;
+  opacity: 1;
+  color: $font-color-menuitem;
+}

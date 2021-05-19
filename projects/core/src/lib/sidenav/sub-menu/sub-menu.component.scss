@@ -1,0 +1,15 @@
+@import "abstracts/abstracts";
+
+$submenu-background: $white;
+$submenu-shadow: $shadow-1;
+
+:host {
+  @include layout--layer(navigation, base);
+  position: absolute;
+  top: 0;
+  left: 6rem;
+  bottom: 0;
+  width: 200px;
+  background-color: $submenu-background;
+  box-shadow: $submenu-shadow;
+}

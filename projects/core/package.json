@@ -16,7 +16,8 @@
   "keywords": [
     "angular",
     "javascript",
-    "typescript"
+    "typescript",
+    "cellows"
   ],
   "ng-add": {
     "save": "dependencies"

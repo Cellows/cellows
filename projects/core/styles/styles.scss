@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@charset 'utf-8';
+
+//Vendor
+@import "vendor/vendor";
+
+//Abstracts
+@import "abstracts/abstracts";
+
+//Base Styles
+@import "base/base";
+
+//Components
+@import "components/components";
+
+//Layout
+@import "layouts/layouts";

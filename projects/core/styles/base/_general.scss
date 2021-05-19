@@ -1,0 +1,21 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $font-size--base--px;  /* px fallback */
+  font-size: $font-size--base;    /* default font-size for document */
+  @include font-size($p-font-sizes);
+  background: $background-color;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--normal;
+  color: $text-color;
+  line-height: 1;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}

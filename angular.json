@@ -8,9 +8,14 @@
   "projects": {
     "core": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "projects/core",
       "sourceRoot": "projects/core/src",
-      "prefix": "lib",
+      "prefix": "cel",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

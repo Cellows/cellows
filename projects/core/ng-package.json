@@ -3,8 +3,13 @@
   "dest": "../../dist/core",
   "lib": {
     "entryFile": "src/public-api.ts",
+    "cssUrl": "inline",
+    "styleIncludePaths": ["./styles"],
     "umdModuleIds": {
       "@microsoft/applicationinsights-web": "ApplicationInsightsWeb"
     }
-  }
+  },
+  "assets": [
+    "./assets"
+  ]
 }
