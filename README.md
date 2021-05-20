@@ -28,19 +28,41 @@ providers: {
 }
 ```
 
-## Styles
+## Cellows styles
 
-
+Import the Cellows styles in your Angular web app (angular.json):
+```
+"architect": {
+  "build": {
+    ...
+    "options": {
+      ...
+      "styles": [
+        ...
+        "./node_modules/@cellows/core/styles.css",
+        ...
+      ]
+    }
+  }
+}
+```
 
 # Development
 
-## Build
+## Build local
 
-Run `yarn run build` to build the project. The build artifacts will be stored in the `dist/core` directory.
+Run `yarn run build:dev` to build the project. The build artifacts will be stored in the `dist/core` directory.
 This command will run the following tasks:
 - build package: ng build
 - gulp tasks: build-css, move-icon-fonts, move-assets
 - set the version nr in dist/core/package.json
+
+## Build for production
+
+Run `yarn build` to build the project. The build artifacts will be stored in the `dist/core` directory.
+This command will run the following tasks:
+- build package: ng build
+- gulp tasks: build-css, move-icon-fonts, move-assets
 
 ## Publishing
 

@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && gulp build-assets && yarn run libVersion",
+    "build": "ng build && gulp build-assets",
+    "build:dev": "ng build && gulp build-assets && yarn run libVersion",
     "libVersion": "npm version 0.1.0 --prefix dist/core",
     "test": "ng test",
     "lint": "ng lint",
