@@ -28,15 +28,23 @@ providers: {
 }
 ```
 
+## Styles
+
+
+
 # Development
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `yarn run build` to build the project. The build artifacts will be stored in the `dist/core` directory.
+This command will run the following tasks:
+- build package: ng build
+- gulp tasks: build-css, move-icon-fonts, move-assets
+- set the version nr in dist/core/package.json
 
 ## Publishing
 
-After building your library with `ng build`, go to the dist folder `cd dist/core` and run `npm publish --access public`.
+After building your library, go to the dist folder `cd dist/core` and run `npm publish --access public`.
 
 ## Running unit tests
 

@@ -1,4 +1,6 @@
-@import "abstracts/abstracts";
+@import 'abstracts/colors';
+@import 'abstracts/mixins';
+@import 'abstracts/zindex';
 
 $background-sidenav: $theme-color--dark;
 $font-color-sidenav: $white;

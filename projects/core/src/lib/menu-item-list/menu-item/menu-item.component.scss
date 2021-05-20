@@ -1,4 +1,6 @@
-@import "abstracts/abstracts";
+@import 'abstracts/colors';
+@import 'abstracts/fonts';
+@import 'abstracts/mixins';
 
 $font-color-menuitem: $white;
 $font-size-icon: $font-size--lg;

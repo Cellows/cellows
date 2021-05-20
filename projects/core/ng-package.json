@@ -8,8 +8,5 @@
     "umdModuleIds": {
       "@microsoft/applicationinsights-web": "ApplicationInsightsWeb"
     }
-  },
-  "assets": [
-    "./assets"
-  ]
+  }
 }

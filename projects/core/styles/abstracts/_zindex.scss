@@ -9,7 +9,7 @@
         .tooltip-on-my-modal {
             @include layout--layer(absolute, modal, tooltip);
         }
-    
+
         Which will be compiled as:
         .main {
             position: relative;
@@ -49,30 +49,34 @@ $layers: (
 );
 
 @function utility--z-number($keys) {
-    $map: $layers;
-    $found-index: null;
-    @each $key in $keys {
-      @if (type-of($map) == "map") {
-        $found-index: index(map-keys($map), $key);
-        $map: map-get($map, $key);
-      }
-      @else {
-        $found-index: index($map, $key);
-      }
-      @if ($found-index == null) {
-        @error "`#{$key}` is not part of the elevation map: `#{$layers}`";
-      }
-    }
-    @return $found-index;
-  }
-  @mixin layout--layer($keys...) {
-    $first-el: nth($keys, 1);
-    $valid-positions: relative, absolute, fixed, sticky;
-    @if (index($valid-positions, $first-el)) {
-      position: $first-el;
-      z-index: utility--z-number(utility--list-remove($keys,1));
+  $map: $layers;
+  $found-index: null;
+
+  @each $key in $keys {
+    @if (type-of($map) == "map") {
+      $found-index: index(map-keys($map), $key);
+      $map: map-get($map, $key);
     } @else {
-      position: relative;
-      z-index: utility--z-number($keys);
+      $found-index: index($map, $key);
+    }
+
+    @if ($found-index == null) {
+      @error "`#{$key}` is not part of the elevation map: `#{$layers}`";
     }
   }
+
+  @return $found-index;
+}
+
+@mixin layout--layer($keys...) {
+  $first-el: nth($keys, 1);
+  $valid-positions: relative, absolute, fixed, sticky;
+
+  @if (index($valid-positions, $first-el)) {
+    position: $first-el;
+    z-index: utility--z-number(utility--list-remove($keys, 1));
+  } @else {
+    position: relative;
+    z-index: utility--z-number($keys);
+  }
+}
