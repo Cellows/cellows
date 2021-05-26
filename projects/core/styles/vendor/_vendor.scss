@@ -1,4 +1,6 @@
 /* Import all vendor files */
 
 /* If a vendor library is used, import here (Fontawesome, bootstrap, normalize..) */
-@import     "reset";
+@import     "reset",
+            "fontawesome/fontawesome.scss",
+            "fontawesome/solid.scss";

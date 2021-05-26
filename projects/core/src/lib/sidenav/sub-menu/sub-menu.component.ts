@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewEncapsulation } from '@angular/core';
 import { ListItem } from '../../list/list-item/list-item';
 
 @Component({
@@ -7,14 +7,20 @@ import { ListItem } from '../../list/list-item/list-item';
   styleUrls: ['./sub-menu.component.scss']
 })
 export class SubMenuComponent implements OnInit {
-  collapsed = true;
+  collapsed = false;
+  @Output() toggleEvent = new EventEmitter<boolean>();
   listItems: ListItem[];
 
-  constructor() {
+  constructor(
+    private renderer: Renderer2,
+    private elementref: ElementRef
+  ) {
     this.listItems = [<ListItem>{ title: 'All assets', textLeft: '04-04-2021', textRight: 'System' }];
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.toggleEvent.emit(this.collapsed);
+  }
 
   toggle() {
     this.collapsed = !this.collapsed;

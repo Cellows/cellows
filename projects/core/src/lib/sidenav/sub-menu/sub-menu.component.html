@@ -1,2 +1,13 @@
-<button (click)="toggle()">{{ collapsed ? '>' : '<' }}</button>
-<cel-list [listItems]="listItems"></cel-list>
+<div class="submenu__inner" [ngClass]="collapsed ? 'submenu__inner--collapsed' : 'submenu__inner--expanded'">
+  <div class="submenu__header">
+    <span class="submenu__logo">
+      <img class="submenu__logo--visual" alt="Cellows Logo" [src]="'assets/logo/Cellows-neg-nobg.png'" />
+    </span>
+
+    <a href="javascript:void(0)" (click)="toggle()" class="submenu__toggle">
+      <i class="fas fa-angle-double-left"></i>
+    </a>
+  </div>
+
+  <cel-list [listItems]="listItems"></cel-list>
+</div>

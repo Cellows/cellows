@@ -1,13 +1,19 @@
-<div class="sidenav__container" [ngClass]="collapsed ? 'sidenav__container--collapsed' : 'sidenav-container--expanded'" #sidenav>
-  <a href="javascript:void(0)" (click)="toggle()" class="sidenav__button">
-    <span [ngClass]="collapsed ? 'icon-right' : 'icon-left'"></span>
-  </a>
+<aside aria-label="cel-sidenav" class="sidenav__container" [ngClass]="collapsed ? 'sidenav__container--collapsed' : 'sidenav__container--expanded'" #sidenav>
+    <a href="javascript:void(0)" (click)="toggle()" class="sidenav__button">
+      <span [ngClass]="collapsed ? 'icon-right' : 'icon-left'"></span>
+    </a>
 
-  <a href="javascript:void(0)" class="sidenav__logo">
-    <img class="sidenav__logo--visual" alt="Cellows Logo" [src]="collapsed ? 'assets/logo/Cellows-Icon-neg-nobg.png' : 'assets/logo/Cellows-neg-nobg.png'" />
-  </a>
+    <a href="javascript:void(0)" class="sidenav__logo">
+      <img class="sidenav__logo--visual" alt="Cellows Logo" [src]="collapsed ? 'assets/logo/Cellows-Icon-neg-nobg.png' : 'assets/logo/Cellows-neg-nobg.png'" />
+    </a>
 
-  <cel-menu-item-list [menuItems]="menuItems"></cel-menu-item-list>
+    <cel-menu-item-list [menuItems]="menuItems"></cel-menu-item-list>
+
+
+
+</aside>
+
+<div class="submenu__container" #submenu>
+  <cel-sub-menu></cel-sub-menu>
 </div>
 
-<cel-sub-menu></cel-sub-menu>

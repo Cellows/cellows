@@ -1,17 +1,51 @@
 @import 'abstracts/colors';
 @import 'abstracts/shadows';
+@import 'abstracts/mixins';
 @import 'abstracts/zindex';
 
-$submenu-background: $white;
-$submenu-shadow: $shadow-1;
+$submenu-background:  $white;
+$submenu-shadow:      $shadow-1;
+$submenu-width:       20rem;
+$submenu-logo-height: 6rem;
 
 :host {
+
+
+
+}
+
+.submenu__inner {
+  @include transition(all, .5s ease-in-out);
   @include layout--layer(navigation, base);
-  position: absolute;
-  top: 0;
-  left: 6rem;
-  bottom: 0;
-  width: 200px;
+  // display: block;
+  width: $submenu-width;
+  height: 100%;
+  padding: 1rem;
   background-color: $submenu-background;
   box-shadow: $submenu-shadow;
+
+  &--collapsed {
+    transform: translateX(-100%);
+    // transition: transform ease-out 0.3s;
+  }
+  &--expanded {
+    transform: translateX(0);
+  }
+}
+
+.submenu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.submenu__toggle {
+  padding: 1rem;
+}
+
+.submenu__logo {
+  margin: 0 auto;
+  &--visual {
+    max-height: $submenu-logo-height;
+  }
 }
