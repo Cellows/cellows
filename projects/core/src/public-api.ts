@@ -17,4 +17,5 @@ export * from './lib/list/list-item/list-item';
 export * from './lib/list/list.component';
 export * from './lib/list/list.module';
 
-export * from './lib/directives/tooltip.directive';
+export * from './lib/tooltip/tooltip.directive';
+export * from './lib/tooltip/tooltip.module';

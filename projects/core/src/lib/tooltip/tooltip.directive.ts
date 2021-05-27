@@ -5,12 +5,15 @@ import { Directive, Input, ElementRef, HostListener, Renderer2 } from '@angular/
 })
 export class TooltipDirective {
   @Input('tooltip') tooltipTitle!: string;
-  @Input() placement!: string;
-  @Input() delay!: any;
+  @Input() placement!: string;  // default bottom
+  @Input() delay!: any;         // default 300
   tooltip!: HTMLElement | null;
   offset = 10;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) { }
 
   @HostListener('mouseenter') onMouseEnter() {
     if (!this.tooltip) { this.show(); }
@@ -23,11 +26,11 @@ export class TooltipDirective {
   show() {
     this.create();
     this.setPosition();
-    this.renderer.addClass(this.tooltip, 'ng-tooltip-show');
+    this.renderer.addClass(this.tooltip, 'cel-tooltip-show');
   }
 
   hide() {
-    this.renderer.removeClass(this.tooltip, 'ng-tooltip-show');
+    this.renderer.removeClass(this.tooltip, 'cel-tooltip-show');
     window.setTimeout(() => {
       this.renderer.removeChild(document.body, this.tooltip);
       this.tooltip = null;
@@ -39,13 +42,21 @@ export class TooltipDirective {
 
     this.renderer.appendChild(
       this.tooltip,
-      this.renderer.createText(this.tooltipTitle) // Here is your text
+      this.renderer.createText(this.tooltipTitle)
     );
 
     this.renderer.appendChild(document.body, this.tooltip);
 
-    this.renderer.addClass(this.tooltip, 'ng-tooltip');
-    this.renderer.addClass(this.tooltip, `ng-tooltip-${this.placement}`);
+    if (this.placement === undefined) {
+      this.placement = 'bottom';
+    }
+
+    if (this.delay === undefined) {
+      this.delay = "300";
+    }
+
+    this.renderer.addClass(this.tooltip, 'cel-tooltip');
+    this.renderer.addClass(this.tooltip, `cel-tooltip-${this.placement}`);
     this.renderer.setStyle(this.tooltip, '-webkit-transition', `opacity ${this.delay}ms`);
     this.renderer.setStyle(this.tooltip, '-moz-transition', `opacity ${this.delay}ms`);
     this.renderer.setStyle(this.tooltip, '-o-transition', `opacity ${this.delay}ms`);
@@ -67,7 +78,7 @@ export class TooltipDirective {
         left = hostPos.left + (hostPos.width - tooltipPos.width) / 2;
       }
 
-      if (this.placement === 'bottom') {
+      if (this.placement === 'bottom' || '') {
         top = hostPos.bottom + this.offset;
         left = hostPos.left + (hostPos.width - tooltipPos.width) / 2;
       }

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MenuItemListComponent } from './menu-item-list.component';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { MenuItemListComponent } from './menu-item-list.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    TooltipModule
   ],
   exports: [
     MenuItemListComponent

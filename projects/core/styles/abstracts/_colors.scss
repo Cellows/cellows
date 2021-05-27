@@ -1,5 +1,5 @@
 /*  ==========================================================================
-    COLOR VARIABLES 
+    COLOR VARIABLES
     ========================================================================== */
 
 $blue-aquarium: #4EA6B5;
@@ -15,7 +15,7 @@ $grey-light: #E0E1E2;
 $orange: #ED553B;
 
 /*  ==========================================================================
-    COLOR USES 
+    COLOR USES
     ========================================================================== */
 
 
@@ -44,3 +44,6 @@ $button-color--secondary: $blue-dark;
 $button-color--tertiary: transparent;
 
 $background-color: $white;
+
+$tooltip-color: $white;
+$tooltip-background: $theme-color;
