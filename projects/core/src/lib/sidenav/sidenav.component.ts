@@ -1,6 +1,5 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from '../menu-item-list/menu-item/menu-item';
-import { SubMenuComponent } from './sub-menu/sub-menu.component';
 
 
 @Component({
@@ -11,21 +10,19 @@ import { SubMenuComponent } from './sub-menu/sub-menu.component';
 
 export class SidenavComponent implements OnInit {
   collapsed = true;
-  @Output() toggleEvent = new EventEmitter<boolean>();
-  @Input() menuItems!: MenuItem[];
+  @Input() menuItems: MenuItem[] = [];
+  @Input() showSubMenu: boolean = false;
+  @Output() sidenavToggled = new EventEmitter<boolean>();
 
-  constructor(
-    private renderer: Renderer2,
-    private elementref: ElementRef
-  ) { }
+  constructor() {}
 
   ngOnInit() {
-    this.toggleEvent.emit(this.collapsed);
+    this.sidenavToggled.emit(this.collapsed);
   }
 
   toggle() {
     this.collapsed = !this.collapsed;
-    this.toggleEvent.emit(this.collapsed);
+    this.sidenavToggled.emit(this.collapsed);
   }
 }
 

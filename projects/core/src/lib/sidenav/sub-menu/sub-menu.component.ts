@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ListItem } from '../../list/list-item/list-item';
 
 @Component({
@@ -8,19 +8,13 @@ import { ListItem } from '../../list/list-item/list-item';
 })
 export class SubMenuComponent implements OnInit {
   collapsed = false;
-  @Output() toggleEvent = new EventEmitter<boolean>();
   listItems: ListItem[];
 
-  constructor(
-    private renderer: Renderer2,
-    private elementref: ElementRef
-  ) {
+  constructor() {
     this.listItems = [<ListItem>{ title: 'All assets', textLeft: '04-04-2021', textRight: 'System' }];
   }
 
-  ngOnInit() {
-    this.toggleEvent.emit(this.collapsed);
-  }
+  ngOnInit() {}
 
   toggle() {
     this.collapsed = !this.collapsed;
