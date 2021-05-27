@@ -8,16 +8,9 @@ $submenu-shadow:      $shadow-1;
 $submenu-width:       20rem;
 $submenu-logo-height: 6rem;
 
-:host {
-
-
-
-}
-
 .submenu__inner {
   @include transition(all, .5s ease-in-out);
   @include layout--layer(navigation, base);
-  // display: block;
   width: $submenu-width;
   height: 100%;
   padding: 1rem;
@@ -26,7 +19,6 @@ $submenu-logo-height: 6rem;
 
   &--collapsed {
     transform: translateX(-100%);
-    // transition: transform ease-out 0.3s;
   }
   &--expanded {
     transform: translateX(0);
@@ -37,6 +29,7 @@ $submenu-logo-height: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 3rem;
 }
 
 .submenu__toggle {
