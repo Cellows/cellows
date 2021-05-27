@@ -1,26 +1,12 @@
-/* font-family */
-
-
-
-/* font-size */
-
-
-
-
-
-/* font-weight */
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
-
 /* ==========================================================================
    FONTS
    ========================================================================== */
-$noto-sans: "Noto Sans",sans-serif;
-$tahoma:    "Tahoma", sans-serif;
-$lato:      "Lato", sans-serif;
+$noto-sans: "Noto Sans", sans-serif;
+$tahoma: "Tahoma", sans-serif;
+$lato: "Lato", sans-serif;
 
-$font-family--primary: $lato;
-$font-family--secondary: $noto-sans;
+$font-family--primary: $noto-sans;
+$font-family--secondary: $lato;
 
 /*  ==========================================================================
     FONTSIZES
@@ -52,8 +38,3 @@ $header-size--3: $font-size--lg;
 $font-weight--light: 100;
 $font-weight--normal: 400;
 $font-weight--strong: 600;
-
-// $icon-size--small: 2.4rem;
-// $icon-size--medium: 4.8rem;
-// $icon-size--large: 150%;
-// $icon-size--extra-large: 7.2rem;
