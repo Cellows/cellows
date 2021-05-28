@@ -7,10 +7,7 @@
       <img class="sidenav__logo--visual" alt="Cellows Logo" [src]="collapsed ? 'assets/logo/Cellows-Icon-neg-nobg.png' : 'assets/logo/Cellows-neg-nobg.png'" />
     </a>
 
-    <cel-menu-item-list [menuItems]="menuItems"></cel-menu-item-list>
-
-
-
+    <cel-menu-item-list [menuItems]="menuItems" (activatedMenuItem)="showHideSubMenu($event)"></cel-menu-item-list>
 </aside>
 
 <div *ngIf="showSubMenu" class="submenu__container" #submenu>
