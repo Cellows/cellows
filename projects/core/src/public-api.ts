@@ -6,6 +6,7 @@ export * from './lib/app-insights-logging/app-insights-config';
 export * from './lib/app-insights-logging/app-insights-logging.service';
 export * from './lib/app-insights-logging/app-insights-logging.module';
 
+export * from './lib/sidenav/sidenav-menu-item';
 export * from './lib/sidenav/sidenav.component';
 export * from './lib/sidenav/sidenav.module';
 
