@@ -1,0 +1,8 @@
+@import 'abstracts/colors';
+
+$background-color-page-header: $theme-color--light;
+
+:host {
+  width: 100%;
+  background-color: $background-color-page-header;
+}

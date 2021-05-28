@@ -19,3 +19,6 @@ export * from './lib/list/list.module';
 
 export * from './lib/tooltip/tooltip.directive';
 export * from './lib/tooltip/tooltip.module';
+
+export * from './lib/page-header/page-header.component';
+export * from './lib/page-header/page-header.module';
