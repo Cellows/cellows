@@ -8,22 +8,32 @@ $submenu-shadow:      $shadow-1;
 $submenu-width:       20rem;
 $submenu-logo-height: 6rem;
 
-.submenu__inner {
-  @include transition(all, .5s ease-in-out);
+:host {
   @include layout--layer(navigation, base);
+  display: block;
   width: $submenu-width;
   height: 100%;
   padding: 1rem;
   background-color: $submenu-background;
   box-shadow: $submenu-shadow;
-
-  &--collapsed {
-    transform: translateX(-100%);
-  }
-  &--expanded {
-    transform: translateX(0);
-  }
 }
+
+// .submenu__inner {
+//   @include transition(width, .5s ease-in-out);
+//   @include layout--layer(navigation, base);
+//   width: $submenu-width;
+//   height: 100%;
+//   padding: 1rem;
+//   background-color: $submenu-background;
+//   box-shadow: $submenu-shadow;
+
+//   &--collapsed {
+//     transform: translateX(-100%);
+//   }
+//   &--expanded {
+//     transform: translateX(0);
+//   }
+// }
 
 .submenu__header {
   display: flex;

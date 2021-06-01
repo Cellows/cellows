@@ -13,6 +13,13 @@ $font-color-sidenav: $white;
   bottom: 0;
 }
 
+// :host {
+//   display: flex;
+// }
+.fade {
+  opacity: 0;
+}
+
 .sidenav__container {
   @include transition(all, .5s ease-in-out);
   @include layout--layer(menu);

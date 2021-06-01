@@ -4,6 +4,7 @@ import { SidenavComponent } from './sidenav.component';
 import { SubMenuComponent } from './sub-menu/sub-menu.component';
 import { MenuItemListModule } from '../menu-item-list/menu-item-list.module';
 import { ListModule } from '../list/list.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ListModule } from '../list/list.module';
   imports: [
     CommonModule,
     MenuItemListModule,
-    ListModule
+    ListModule,
+    BrowserAnimationsModule
   ],
   exports: [
     SidenavComponent
