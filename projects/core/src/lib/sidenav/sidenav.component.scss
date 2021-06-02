@@ -7,18 +7,8 @@ $font-color-sidenav: $white;
 
 :host {
   display: flex;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  height: 100%;
 }
-
-// :host {
-//   display: flex;
-// }
-// .fade {
-//   opacity: 0;
-// }
 
 .sidenav__container {
   @include transition(all, .5s ease-in-out);

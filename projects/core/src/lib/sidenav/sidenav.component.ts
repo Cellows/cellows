@@ -75,7 +75,6 @@ export class SidenavComponent implements OnInit {
 
   toggleSub(value: boolean) {
     this.showSubMenu = value;
-    console.log(this.showSubMenu);
   }
 }
 

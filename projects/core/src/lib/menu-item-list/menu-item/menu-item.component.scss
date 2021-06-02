@@ -3,12 +3,13 @@
 @import 'abstracts/mixins';
 
 $font-color-menuitem: $white;
+$background-color-menuitem--active: $theme-color;
 $font-size-icon: $font-size--lg;
 
 :host {
   display: block;
   white-space: nowrap;
-  margin: 0 2rem 0 0;
+  margin: 0;
 }
 
 :host-context(.sidenav__container--collapsed) .menuitem__label {
@@ -24,9 +25,17 @@ $font-size-icon: $font-size--lg;
   color: $font-color-menuitem;
 }
 
+.is-active{
+  @include transition(background-color, .3s ease-in-out);
+  display: inline-block;
+  background-color: $background-color-menuitem--active;
+  width: 100%;
+}
+
 .menuitem__label {
   @include transition(opacity, .3s ease-in-out);
   vertical-align: text-top;
   opacity: 1;
   color: $font-color-menuitem;
+  margin-right: 2rem;
 }

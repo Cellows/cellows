@@ -28,14 +28,6 @@ $text-color: $black;
 $text-color--light: $grey-dark;
 $text-color--disabled: $text-color--light;
 
-$theme-color: $blue-aquarium;
-$theme-color--dark: $blue-dark;
-$theme-color--accent: $orange;
-
-$text-color: $black;
-$text-color--light: $grey-dark;
-$text-color--disabled: $text-color--light;
-
 $link-color: $blue-aquarium;
 
 $border-color: $grey-light;
@@ -45,6 +37,7 @@ $button-color--secondary: $blue-dark;
 $button-color--tertiary: transparent;
 
 $background-color: $white;
+$background-color--light: $grey-light;
 
-$tooltip-color: $white;
-$tooltip-background: $theme-color;
+$tooltip-color: $theme-color--dark;
+$tooltip-background: $background-color--light;

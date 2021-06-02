@@ -1,4 +1,6 @@
 $tooltip-fontsize: $font-size--xs;
+$tooltip-background: $tooltip-background;
+$tooltip-color: $tooltip-color;
 
 .cel-tooltip {
   @include layout--layer(menu, tooltip);

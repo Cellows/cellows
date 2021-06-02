@@ -1,5 +1,5 @@
 <!-- icon-->
-<a [routerLink]="menuItem.routePath" (click)="onClick(menuItem)" tooltip="{{menuItem.displayName}}" celTooltip>
+<a [routerLink]="menuItem.routePath" routerLinkActive="is-active" (click)="onClick(menuItem)" tooltip="{{menuItem.displayName}}" celTooltip>
   <span class="icon-{{menuItem.routePath | lowercase}}"></span>
   <span class="menuitem__label">{{menuItem.displayName}}</span>
 </a>
