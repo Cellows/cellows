@@ -15,7 +15,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/core/ng-package.json"
+            "project": "projects/core/ng-package.json",
+            "tsConfig": "projects/core/tsconfig.lib.prod.json"
           },
           "configurations": {
             "production": {
