@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 import { MenuItem } from '../menu-item-list/menu-item/menu-item';
 import { SidenavMenuItem } from './sidenav-menu-item';
 
-
 @Component({
   selector: 'cel-sidenav',
   templateUrl: './sidenav.component.html',
@@ -37,13 +36,16 @@ export class SidenavComponent implements OnInit {
   collapsed = true;
   menuItems: MenuItem[] = [];
   showSubMenu: boolean = false;
+  title!: string;
   @Input() sidenavMenuItems: SidenavMenuItem[] = [];
   @Output() sidenavToggled = new EventEmitter<boolean>();
+  @Output() setTitle = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
     this.sidenavToggled.emit(this.collapsed);
+    this.setTitle.emit(this.title);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -67,6 +69,8 @@ export class SidenavComponent implements OnInit {
   showHideSubMenu(menuItem: MenuItem) {
     const sidenavMenuItem = this.sidenavMenuItems.find(x => x.displayName === menuItem.displayName);
     this.showSubMenu = sidenavMenuItem?.showSubMenu || false;
+    this.title = sidenavMenuItem?.displayName || '';
+    this.setTitle.emit(this.title);
   }
 
   toggleSub(value: boolean) {

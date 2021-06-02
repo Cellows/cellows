@@ -12,6 +12,6 @@
 
 <div *ngIf="showSubMenu" class="submenu__container" [@inOutAnimation]>
 
-<cel-sub-menu [showSubMenu]="showSubMenu" (toggleSubMenu)="toggleSub($event)"></cel-sub-menu>
+<cel-sub-menu [showSubMenu]="showSubMenu" (toggleSubMenu)="toggleSub($event)" [title]="title"></cel-sub-menu>
 </div>
 

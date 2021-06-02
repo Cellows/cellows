@@ -16,9 +16,9 @@ $font-color-sidenav: $white;
 // :host {
 //   display: flex;
 // }
-.fade {
-  opacity: 0;
-}
+// .fade {
+//   opacity: 0;
+// }
 
 .sidenav__container {
   @include transition(all, .5s ease-in-out);

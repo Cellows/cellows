@@ -10,6 +10,7 @@ export class SubMenuComponent implements OnInit {
   collapsed = true;
   listItems: ListItem[];
   @Input('showSubMenu') showSubMenu!: boolean;
+  @Input('title') title!: string;
   @Output() toggleSubMenu = new EventEmitter<boolean>();
 
   constructor() {
@@ -19,24 +20,7 @@ export class SubMenuComponent implements OnInit {
   ngOnInit() {}
 
   toggle(value: boolean) {
-    console.log('toggle');
     value = !value;
     this.toggleSubMenu.emit(value);
-    console.log(value);
-    // this.inner.nativeElement.classList.remove('submenu__inner--expanded');
-    // if (showsubmenu = true) {
-    //   showsubmenu = !showsubmenu;
-
-    //   // this.inner
-    //   // this.ref.detectChanges();
-    // }
-    // if (this.inner.nativeElement.classList.contains('submenu__inner--expanded')) {
-    //   console.log(this.inner.nativeElement, "expanded");
-    //   this.inner.nativeElement.classList.remove('submenu__inner--expanded');
-    //   this.inner.nativeElement.classList.add('submenu__inner--collapsed');
-    //   console.log(this.inner.nativeElement, "expanded AFTER");
-    // } else {
-    //   console.log(this.inner.nativeElement, "NOT expanded");
-    // }
   }
 }

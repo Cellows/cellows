@@ -2,6 +2,7 @@
 @import 'abstracts/shadows';
 @import 'abstracts/mixins';
 @import 'abstracts/zindex';
+@import 'abstracts/fonts';
 
 $submenu-background:  $white;
 $submenu-shadow:      $shadow-1;
@@ -18,28 +19,17 @@ $submenu-logo-height: 6rem;
   box-shadow: $submenu-shadow;
 }
 
-// .submenu__inner {
-//   @include transition(width, .5s ease-in-out);
-//   @include layout--layer(navigation, base);
-//   width: $submenu-width;
-//   height: 100%;
-//   padding: 1rem;
-//   background-color: $submenu-background;
-//   box-shadow: $submenu-shadow;
-
-//   &--collapsed {
-//     transform: translateX(-100%);
-//   }
-//   &--expanded {
-//     transform: translateX(0);
-//   }
-// }
-
 .submenu__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 3rem;
+}
+
+.submenu__title {
+  font-size: $f3;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .submenu__toggle {
