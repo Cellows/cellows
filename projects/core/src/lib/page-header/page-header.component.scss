@@ -1,8 +1,20 @@
 @import 'abstracts/colors';
+@import 'abstracts/fonts';
 
 $background-color-page-header: $theme-color--light;
+$text-color-page-header: $text-color--light;
+$font-size-page-header: $f3;
 
 :host {
+  display: block;
   width: 100%;
   background-color: $background-color-page-header;
+  margin-left: -3rem;
+  padding: 2rem;
+  padding-left: 3rem;
+}
+
+h1 {
+  font-size: $font-size-page-header;
+  color: $text-color-page-header;
 }
