@@ -1,3 +1,4 @@
+import '!style-loader!css-loader!resolve-url-loader!sass-loader!../projects/core/styles/styles.scss';
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
 setCompodocJson(docJson);
