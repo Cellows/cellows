@@ -4,9 +4,9 @@ import { Directive, Input, ElementRef, HostListener, Renderer2 } from '@angular/
   selector: '[celTooltip]'
 })
 export class TooltipDirective {
-  @Input('tooltip') tooltipTitle!: string;
-  @Input() placement!: string;  // default bottom
-  @Input() delay!: any;         // default 300
+  @Input('tooltip') tooltipTitle: string = "<provide tooltip string>";
+  @Input() placement: string = "bottom";
+  @Input() delay: number = 300;
   tooltip!: HTMLElement | null;
   offset = 10;
 
@@ -46,14 +46,6 @@ export class TooltipDirective {
     );
 
     this.renderer.appendChild(document.body, this.tooltip);
-
-    if (this.placement === undefined) {
-      this.placement = 'bottom';
-    }
-
-    if (this.delay === undefined) {
-      this.delay = "300";
-    }
 
     this.renderer.addClass(this.tooltip, 'cel-tooltip');
     this.renderer.addClass(this.tooltip, `cel-tooltip-${this.placement}`);
@@ -96,8 +88,5 @@ export class TooltipDirective {
       this.renderer.setStyle(this.tooltip, 'top', `${top + scrollPos}px`);
       this.renderer.setStyle(this.tooltip, 'left', `${left}px`);
     }
-
-
-
   }
 }
