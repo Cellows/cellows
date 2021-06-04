@@ -1,16 +1,16 @@
-@use '../../../styles/abstracts/colors';
-@use '../../../styles/abstracts/shadows';
-@use '../../../styles/abstracts/mixins';
-@use '../../../styles/abstracts/zindex';
-@use '../../../styles/abstracts/fonts';
+@use '../../../../styles/abstracts/colors' as colors;
+@use '../../../../styles/abstracts/fonts' as fonts;
+@use '../../../../styles/abstracts/mixins' as mixins;
+@use '../../../../styles/abstracts/shadows' as shadows;
+@use '../../../../styles/abstracts/zindex' as zindex;
 
-$submenu-background:  $white;
-$submenu-shadow:      $shadow-1;
+$submenu-background:  colors.$white;
+$submenu-shadow:      shadows.$shadow-1;
 $submenu-width:       20rem;
 $submenu-logo-height: 6rem;
 
 :host {
-  @include layout--layer(navigation, base);
+  @include zindex.layout--layer(navigation, base);
   display: block;
   width: $submenu-width;
   height: 100%;
@@ -27,7 +27,7 @@ $submenu-logo-height: 6rem;
 }
 
 .submenu__title {
-  font-size: $f3;
+  font-size: fonts.$f3;
   text-align: center;
   margin-bottom: 2rem;
 }

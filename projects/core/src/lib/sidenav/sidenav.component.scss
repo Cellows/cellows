@@ -1,9 +1,9 @@
-@use '../../../styles/abstracts/colors';
-@use '../../../styles/abstracts/mixins';
-@use '../../../styles/abstracts/zindex';
+@use '../../../styles/abstracts/colors' as colors;
+@use '../../../styles/abstracts/mixins' as mixins;
+@use '../../../styles/abstracts/zindex' as zindex;
 
-$background-sidenav: $theme-color--dark;
-$font-color-sidenav: $white;
+$background-sidenav: colors.$theme-color--dark;
+$font-color-sidenav: colors.$white;
 
 :host {
   display: flex;
@@ -11,8 +11,8 @@ $font-color-sidenav: $white;
 }
 
 .sidenav__container {
-  @include transition(all, .5s ease-in-out);
-  @include layout--layer(menu);
+  @include mixins.transition(all, .5s ease-in-out);
+  @include zindex.layout--layer(menu);
   position: relative;
   width: 100%;
 
@@ -58,7 +58,7 @@ $font-color-sidenav: $white;
 }
 
 .submenu__container {
-  @include layout--layer(navigation, base);
+  @include zindex.layout--layer(navigation, base);
   // width: 200px;
   // position: absolute;
   // top: 0;

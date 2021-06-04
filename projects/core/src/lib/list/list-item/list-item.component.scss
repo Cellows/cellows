@@ -1,11 +1,11 @@
-@use '../../../styles/abstracts/fonts';
-@use '../../../styles/abstracts/colors';
+@use '../../../../styles/abstracts/colors' as colors;
+@use '../../../../styles/abstracts/fonts' as fonts;
 
-$font-weight-title: $font-weight--strong;
-$font-weight-item: $font-weight--normal;
-$font-size-item: $font-size--base;
-$color-item--light: $text-color--light;
-$border-color-item: $border-color;
+$font-weight-title: fonts.$font-weight--strong;
+$font-weight-item: fonts.$font-weight--normal;
+$font-size-item: fonts.$font-size--base;
+$color-item--light: colors.$text-color--light;
+$border-color-item: colors.$border-color;
 
 :host {
   display: block;
