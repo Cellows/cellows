@@ -1,5 +1,5 @@
-@import 'abstracts/colors';
-@import 'abstracts/fonts';
+@use '../../../styles/abstracts/colors';
+@use '../../../styles/abstracts/fonts';
 
 $background-color-page-header: $theme-color--light;
 $text-color-page-header: $text-color--light;

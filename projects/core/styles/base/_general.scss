@@ -1,15 +1,19 @@
+@use "../abstracts/colors";
+@use "../abstracts/fonts";
+@use "typography";
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-size: $font-size--base--px;  /* px fallback */
-  font-size: $font-size--base;    /* default font-size for document */
-  @include font-size($p-font-sizes);
-  background: $background-color;
-  font-family: $font-family--primary;
-  font-weight: $font-weight--normal;
-  color: $text-color;
+  font-size: fonts.$font-size--base--px;  /* px fallback */
+  font-size: fonts.$font-size--base;    /* default font-size for document */
+  @include typography.font-size(typography.$p-font-sizes);
+  background: colors.$background-color;
+  font-family: fonts.$font-family--primary;
+  font-weight: fonts.$font-weight--normal;
+  color: colors.$text-color;
   line-height: 1;
 }
 

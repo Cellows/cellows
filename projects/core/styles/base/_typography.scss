@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints";
+@use "../abstracts/fonts";
+
 /* Font family */
 // body {
 //     font-size: $f1;
@@ -7,71 +10,71 @@
 
 /* Font size */
 .f1 {
-  font-size: $f1;
+  font-size: fonts.$f1;
 }
 
 .f2 {
-  font-size: $f2;
+  font-size: fonts.$f2;
 }
 
 .f3 {
-  font-size: $f3;
+  font-size: fonts.$f3;
 }
 
 .f4 {
-  font-size: $f4;
+  font-size: fonts.$f4;
 }
 
 .f5 {
-  font-size: $f5;
+  font-size: fonts.$f5;
 }
 
-@each $breakpoint-name, $breakpoint-width in $breakpoint-map {
+@each $breakpoint-name, $breakpoint-width in breakpoints.$breakpoint-map {
   @media (min-width: $breakpoint-width) {
     .f1-#{$breakpoint-name} {
-      font-size: $f1;
+      font-size: fonts.$f1;
     }
     .f2-#{$breakpoint-name} {
-      font-size: $f2;
+      font-size: fonts.$f2;
     }
     .f3-#{$breakpoint-name} {
-      font-size: $f3;
+      font-size: fonts.$f3;
     }
     .f4-#{$breakpoint-name} {
-      font-size: $f4;
+      font-size: fonts.$f4;
     }
     .f5-#{$breakpoint-name} {
-      font-size: $f5;
+      font-size: fonts.$f5;
     }
   }
 }
 
 $p-font-sizes: (
-  null: $font-size--xs,
-  480px: $font-size--sm,
-  640px: $font-size--sm,
-  1024px: $font-size--sm
+  null: fonts.$font-size--xs,
+  480px: fonts.$font-size--sm,
+  640px: fonts.$font-size--sm,
+  1024px: fonts.$font-size--sm
 );
 
 $h1-font-sizes: (
-  null: $font-size--lg,
-  480px: $font-size--xl,
-  640px: $font-size--xl,
-  1024px: $font-size--xl
+  null: fonts.$font-size--lg,
+  480px: fonts.$font-size--xl,
+  640px: fonts.$font-size--xl,
+  1024px: fonts.$font-size--xl
 );
 
 $h2-font-sizes: (
-  null: $font-size--md,
-  480px: $font-size--lg,
-  640px: $font-size--lg,
-  1024px: $font-size--lg
+  null: fonts.$font-size--md,
+  480px: fonts.$font-size--lg,
+  640px: fonts.$font-size--lg,
+  1024px: fonts.$font-size--lg
 );
 
 $h3-font-sizes: (
-  null: $font-size--md,
-  480px: $font-size--lg,
-  640px: $font-size--lg,
-  1024px: $font-size--lg
+  null: fonts.$font-size--md,
+  480px: fonts.$font-size--lg,
+  640px: fonts.$font-size--lg,
+  1024px: fonts.$font-size--lg
 );
 
 @mixin font-size($fs-map) {
@@ -89,22 +92,22 @@ $h3-font-sizes: (
 
 body, p {
   @include font-size($p-font-sizes);
-  font-weight: $font-weight--normal;
+  font-weight: fonts.$font-weight--normal;
 }
 
 h1 {
   @include font-size($h1-font-sizes);
-  font-weight: $font-weight--strong;
+  font-weight: fonts.$font-weight--strong;
 }
 
 h2 {
   @include font-size($h2-font-sizes);
-  font-weight: $font-weight--strong;
+  font-weight: fonts.$font-weight--strong;
 }
 
 h3 {
   @include font-size($h3-font-sizes);
-  font-weight: $font-weight--normal;
+  font-weight: fonts.$font-weight--normal;
 }
 
 h1,
