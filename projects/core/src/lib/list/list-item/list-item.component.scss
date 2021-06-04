@@ -1,5 +1,5 @@
-@import 'abstracts/fonts';
-@import 'abstracts/colors';
+@use '../../../styles/abstracts/fonts';
+@use '../../../styles/abstracts/colors';
 
 $font-weight-title: $font-weight--strong;
 $font-weight-item: $font-weight--normal;

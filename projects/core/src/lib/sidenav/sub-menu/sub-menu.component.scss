@@ -1,8 +1,8 @@
-@import 'abstracts/colors';
-@import 'abstracts/shadows';
-@import 'abstracts/mixins';
-@import 'abstracts/zindex';
-@import 'abstracts/fonts';
+@use '../../../styles/abstracts/colors';
+@use '../../../styles/abstracts/shadows';
+@use '../../../styles/abstracts/mixins';
+@use '../../../styles/abstracts/zindex';
+@use '../../../styles/abstracts/fonts';
 
 $submenu-background:  $white;
 $submenu-shadow:      $shadow-1;

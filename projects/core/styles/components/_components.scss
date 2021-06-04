@@ -4,8 +4,8 @@
 
 
 // Atoms
-@import     "atoms/links",
-            "atoms/tooltip";
+@use "atoms/links";
+@use "atoms/tooltip";
 
 // Molecule
 

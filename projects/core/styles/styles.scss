@@ -3,16 +3,16 @@
 @charset 'utf-8';
 
 //Vendor
-@import "vendor/vendor";
+@use "vendor/vendor";
 
 //Abstracts
-@import "abstracts/abstracts";
+@use "abstracts/abstracts";
 
 //Base Styles
-@import "base/base";
+@use "base/base";
 
 //Components
-@import "components/components";
+@use "components/components";
 
 //Layout
-@import "layouts/layouts";
+@use "layouts/layouts";

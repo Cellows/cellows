@@ -3,13 +3,13 @@
 /* Font import, SCSS mixins, SCSS variables go here */
 
 
-@import     "colors",
-            "fonts",
-            "icons",
-            "breakpoints",
-            "mixins",
-            "shadows",
-            "zindex",
-            "spacing";
+@use "colors";
+@use "fonts";
+@use "icons";
+@use "breakpoints";
+@use "mixins";
+@use "shadows";
+@use "zindex";
+@use "spacing";
 
 
