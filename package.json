@@ -12,7 +12,7 @@
     "compodoc": "npx compodoc -p projects/core/tsconfig.lib.json",
     "composerve": "npx compodoc -s",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "yarn docs:json && start-storybook -s ./projects/core/assets -p 6006",
+    "storybook": "yarn docs:json && start-storybook -s ./projects/core -p 6006",
     "build-storybook": "yarn docs:json && build-storybook"
   },
   "private": true,

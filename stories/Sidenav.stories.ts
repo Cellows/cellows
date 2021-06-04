@@ -12,7 +12,7 @@ import { ListItemComponent } from 'projects/core/src/lib/list/list-item/list-ite
   selector: 'app-assets',
   template: '<h1>Assets page</h1>'
 })
-export class AssetsComponent {}
+ class AssetsComponent {}
 
 export default {
   title: 'Templates/Sidenav',
