@@ -11,14 +11,9 @@ gulp.task('build-css', function () {
     .pipe(gulp.dest('./dist/core'));
 });
 
-gulp.task('move-icon-fonts', function () {
-  return gulp.src('./projects/core/styles/abstracts/iconfont/fonts/**/*.*')
-    .pipe(gulp.dest('./dist/core/iconfont/fonts'));
-});
-
-gulp.task('move-fa-fonts', function () {
-  return gulp.src('./projects/core/styles/vendor/fontawesome/webfonts/**/*.*')
-    .pipe(gulp.dest('./dist/core/fontawesome/fonts'));
+gulp.task('move-fonts', function () {
+  return gulp.src(['./projects/core/styles/abstracts/fonts/**/*.*', './projects/core/styles/vendor/fontawesome/fonts/**/*.*'])
+    .pipe(gulp.dest('./dist/core/fonts'));
 });
 
 gulp.task('move-assets', function () {
@@ -26,4 +21,4 @@ gulp.task('move-assets', function () {
     .pipe(gulp.dest('./dist/core/assets'));
 });
 
-gulp.task('build-assets', gulp.series('build-css', 'move-icon-fonts', 'move-fa-fonts', 'move-assets'));
+gulp.task('build-assets', gulp.series('build-css', 'move-fonts','move-assets'));
