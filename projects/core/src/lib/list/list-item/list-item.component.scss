@@ -1,0 +1,27 @@
+@use '../../../../styles/abstracts/colors' as colors;
+@use '../../../../styles/abstracts/fonts' as fonts;
+
+$font-weight-title: fonts.$font-weight--strong;
+$font-weight-item: fonts.$font-weight--normal;
+$font-size-item: fonts.$font-size--base;
+$color-item--light: colors.$text-color--light;
+$border-color-item: colors.$border-color;
+
+:host {
+  display: block;
+  border-bottom: .1rem solid $border-color-item;
+  margin: 1rem auto;
+}
+
+:host>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem .5rem;
+  font-size: $font-size-item;
+  font-weight: $font-weight-item;
+  color: rgba($color-item--light, .7);
+}
+
+.list-item__title {
+    font-weight: $font-weight-title;
+}

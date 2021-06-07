@@ -1,0 +1,13 @@
+@use "sass:color";
+@use "../../abstracts/colors";
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+#{$a-tags} {
+  color: colors.$link-color;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: color.adjust(colors.$link-color, $lightness: -5%);
+}

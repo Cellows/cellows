@@ -1,0 +1,41 @@
+@use '../../../../styles/abstracts/colors' as colors;
+@use '../../../../styles/abstracts/fonts' as fonts;
+@use '../../../../styles/abstracts/mixins' as mixins;
+
+$font-color-menuitem: colors.$white;
+$background-color-menuitem--active: colors.$theme-color;
+$font-size-icon: fonts.$font-size--lg;
+
+:host {
+  display: block;
+  white-space: nowrap;
+  margin: 0;
+}
+
+:host-context(.sidenav__container--collapsed) .menuitem__label {
+  opacity: 0;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  font-size: $font-size-icon;
+  padding: 2rem;
+
+  color: $font-color-menuitem;
+}
+
+.is-active{
+  @include mixins.transition(background-color, .3s ease-in-out);
+  display: inline-block;
+  background-color: $background-color-menuitem--active;
+  width: 100%;
+}
+
+.menuitem__label {
+  @include mixins.transition(opacity, .3s ease-in-out);
+  vertical-align: text-top;
+  opacity: 1;
+  color: $font-color-menuitem;
+  margin-right: 2rem;
+}

@@ -1,0 +1,16 @@
+<div class="submenu__header">
+  <span class="submenu__logo">
+    <img class="submenu__logo--visual" alt="Cellows Logo" [src]="'assets/logo/Cellows-pos.png'" />
+  </span>
+
+  <a href="javascript:void(0)" (click)="toggle(showSubMenu)" class="submenu__toggle">
+    <i class="fas fa-angle-double-left"></i>
+  </a>
+</div>
+
+<div class="submenu__title">
+  {{title}}
+</div>
+
+<cel-list [listItems]="listItems"></cel-list>
+

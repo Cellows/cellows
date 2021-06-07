@@ -1,0 +1,67 @@
+@use '../../../styles/abstracts/colors' as colors;
+@use '../../../styles/abstracts/mixins' as mixins;
+@use '../../../styles/abstracts/zindex' as zindex;
+
+$background-sidenav: colors.$theme-color--dark;
+$font-color-sidenav: colors.$white;
+
+:host {
+  display: flex;
+  height: 100%;
+}
+
+.sidenav__container {
+  @include mixins.transition(all, .5s ease-in-out);
+  @include zindex.layout--layer(menu);
+  position: relative;
+  width: 100%;
+
+  background-color: $background-sidenav;
+  color: $font-color-sidenav;
+
+  &--collapsed {
+    width: 6rem;
+  }
+
+  &--expanded {
+    width: 100%;
+  }
+}
+
+.sidenav__button {
+  position: absolute;
+  left: 100%;
+  width: 2rem;
+  height: 3.6rem;
+
+  border-radius: 0 .4rem .4rem 0;
+
+  background-color: $background-sidenav;
+  color: $font-color-sidenav;
+
+  span {
+    display: block;
+    padding: 1.15rem 0;
+
+    color: $font-color-sidenav;
+    text-align: center;
+  }
+}
+
+.sidenav__logo {
+  display: inline-block;
+  padding: 1rem;
+
+  &--visual {
+    height: 4rem;
+  }
+}
+
+.submenu__container {
+  @include zindex.layout--layer(navigation, base);
+  // width: 200px;
+  // position: absolute;
+  // top: 0;
+  // left: 6rem;
+  // bottom: 0;
+}

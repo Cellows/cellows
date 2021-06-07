@@ -1,0 +1,56 @@
+@use "../../abstracts/colors";
+@use "../../abstracts/fonts";
+@use "../../abstracts/zindex";
+
+$tooltip-fontsize: fonts.$font-size--xs;
+$tooltip-background: colors.$tooltip-background;
+$tooltip-color: colors.$tooltip-color;
+
+.cel-tooltip {
+  @include zindex.layout--layer(menu, tooltip);
+  position: absolute;
+  max-width: 15rem;
+  font-size: $tooltip-fontsize;
+  text-align: center;
+  color: colors.$tooltip-color;
+  padding: .3rem .8rem;
+  background: colors.$tooltip-background;
+  border-radius: .4rem;
+  opacity: 0;
+}
+.cel-tooltip:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+}
+.cel-tooltip-top:after {
+  top: 100%;
+  left: 20%;
+  margin-left: -.5rem;
+  border-width: .5rem;
+  border-color: colors.$tooltip-background transparent transparent transparent;
+}
+.cel-tooltip-bottom:after {
+  bottom: 100%;
+  left: 20%;
+  margin-left: -.5rem;
+  border-width: .5rem;
+  border-color: transparent transparent colors.$tooltip-background transparent;
+}
+.cel-tooltip-left:after {
+  top: 50%;
+  left: 100%;
+  margin-top: -.5rem;
+  border-width: .5rem;
+  border-color: transparent transparent transparent colors.$tooltip-background;
+}
+.cel-tooltip-right:after {
+  top: 50%;
+  right: 100%;
+  margin-top: -.5rem;
+  border-width: .5rem;
+  border-color: transparent colors.$tooltip-background transparent transparent;
+}
+.cel-tooltip-show {
+  opacity: 1;
+}

@@ -41,6 +41,8 @@ yarn-error.log
 testem.log
 /typings
 /documentation
+documentation.json
+*.icloud
 
 # System Files
 .DS_Store
