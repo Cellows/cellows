@@ -1,0 +1,44 @@
+@use '../../../../styles/abstracts/colors' as colors;
+@use '../../../../styles/abstracts/fonts' as fonts;
+@use '../../../../styles/abstracts/mixins' as mixins;
+@use '../../../../styles/abstracts/shadows' as shadows;
+@use '../../../../styles/abstracts/zindex' as zindex;
+
+$submenu-background:  colors.$white;
+$submenu-shadow:      shadows.$shadow-1;
+$submenu-width:       20rem;
+$submenu-logo-height: 6rem;
+
+:host {
+  @include zindex.layout--layer(navigation, base);
+  display: block;
+  width: $submenu-width;
+  height: 100%;
+  padding: 1rem;
+  background-color: $submenu-background;
+  box-shadow: $submenu-shadow;
+}
+
+.submenu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.submenu__title {
+  font-size: fonts.$f3;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.submenu__toggle {
+  padding: 1rem;
+}
+
+.submenu__logo {
+  margin: 0 auto;
+  &--visual {
+    max-height: $submenu-logo-height;
+  }
+}

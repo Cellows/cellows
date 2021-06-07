@@ -1,0 +1,43 @@
+/*  ==========================================================================
+    COLOR VARIABLES
+    ========================================================================== */
+
+$blue-aquarium: #4EA6B5;
+$blue-dark: #0B627D;
+$blue-light: #DCF2F1;
+
+$white: #ffffff;
+$black: #1B1C1D;
+
+$grey-dark: #707070;
+$grey-light: #E0E1E2;
+
+$orange: #ED553B;
+
+/*  ==========================================================================
+    COLOR USES
+    ========================================================================== */
+
+
+$theme-color: $blue-aquarium;
+$theme-color--dark: $blue-dark;
+$theme-color--accent: $orange;
+$theme-color--light: $blue-light;
+
+$text-color: $black;
+$text-color--light: $grey-dark;
+$text-color--disabled: $text-color--light;
+
+$link-color: $blue-aquarium;
+
+$border-color: $grey-light;
+
+$button-color--primary: $blue-aquarium;
+$button-color--secondary: $blue-dark;
+$button-color--tertiary: transparent;
+
+$background-color: $white;
+$background-color--light: $grey-light;
+
+$tooltip-color: $theme-color--dark;
+$tooltip-background: $background-color--light;

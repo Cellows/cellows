@@ -20,6 +20,6 @@ export class ErrorHandlerService extends ErrorHandler {
    * @param error Exception which is thrown
    */
   handleError(error: Error) {
-    this.loggingService.logException(error);
+    //this.loggingService.logException(error);
   }
 }
